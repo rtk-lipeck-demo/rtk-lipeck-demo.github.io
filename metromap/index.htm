@@ -1,0 +1,484 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ru">
+<head>
+    <title>Карта метро Москвы — интерактивная схема московского метро</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="app/common.css">
+    <link rel="stylesheet" type="text/css" href="app/map.css">
+    <link rel="stylesheet" type="text/css" href="app/maps/moscow/moscow.css">
+    <!--[if IE]>
+    <link rel="stylesheet" type="text/css" href="app/msie.css"><![endif]-->
+    <script type="text/javascript" src="scripts/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="scripts/utility.js"></script>
+    <script type="text/javascript" src="scripts/jquery/ui.js"></script>
+    <script type="text/javascript" src="scripts/stations.js"></script>
+</head>
+<body>
+<div id="page">
+<div id="header">
+<div id="panel-canvas">
+<!-- panel canvas begin -->
+<div id="panel">
+<div id="panel-content">
+<div class="stations-button" id="start">
+    <div class="bgr"><br></div>
+    <em class="empty"><br></em>
+    <dl>
+        <dt>Начальная станция…</dt>
+        <dd>Начальная станция…</dd>
+    </dl>
+</div>
+<div class="stations-button" id="finish">
+    <div class="bgr"><br></div>
+    <em class="empty"><br></em>
+    <dl>
+        <dt>Конечная станция…</dt>
+        <dd>Конечная станция…</dd>
+    </dl>
+</div>
+
+<div id="stations">
+<div class="search">
+    <input type="text">
+
+    <div class="clear"><br></div>
+</div>
+<div class="list">
+    <div class="up"><br></div>
+    <div class="scroll">
+        <p class="empty">Таких станций нет</p>
+        <ul class="items">
+            <li>Авиамоторная</li>
+            <li>Автозаводская</li>
+            <li>Академическая</li>
+            <li>Александровский сад</li>
+            <li>Алексеевская</li>
+            <li>Алма-Атинская</li>
+            <li>Алтуфьево</li>
+            <li>Аннино</li>
+            <li>Арбатская</li>
+            <li>Арбатская</li>
+            <li>Аэропорт</li>
+            <li>Бабушкинская</li>
+            <li>Багратионовская</li>
+            <li>Баррикадная</li>
+            <li>Бауманская</li>
+            <li>Беговая</li>
+            <li>Белорусская</li>
+            <li>Белорусская</li>
+            <li>Беляево</li>
+            <li>Бибирево</li>
+            <li>Библиотека им. Ленина</li>
+            <li>Борисово</li>
+            <li>Боровицкая</li>
+            <li>Ботанический сад</li>
+            <li>Братиславская</li>
+            <li>Бульвар адмирала Ушакова</li>
+            <li>Бульвар Дмитрия Донского</li>
+            <li>Бунинская аллея</li>
+            <li>Варшавская</li>
+            <li>ВДНХ</li>
+            <li>Владыкино</li>
+            <li>Водный стадион</li>
+            <li>Войковская</li>
+            <li>Волгоградский проспект</li>
+            <li>Волжская</li>
+            <li>Волоколамская</li>
+            <li>Воробьевы горы</li>
+            <li>Выставочная</li>
+            <li>Выхино</li>
+            <li>Динамо</li>
+            <li>Дмитровская</li>
+            <li>Добрынинская</li>
+            <li>Домодедовская</li>
+            <li>Достоевская</li>
+            <li>Дубровка</li>
+            <li>Зябликово</li>
+            <li>Измайловская</li>
+            <li>Калужская</li>
+            <li>Кантемировская</li>
+            <li>Каховская</li>
+            <li>Каширская</li>
+            <li>Каширская</li>
+            <li>Киевская</li>
+            <li>Киевская</li>
+            <li>Киевская</li>
+            <li>Китай-город</li>
+            <li>Китай-город</li>
+            <li>Кожуховская</li>
+            <li>Коломенская</li>
+            <li>Комсомольская</li>
+            <li>Комсомольская</li>
+            <li>Коньково</li>
+            <li>Красногвардейская</li>
+            <li>Краснопресненская</li>
+            <li>Красносельская</li>
+            <li>Красные ворота</li>
+            <li>Крестьянская застава</li>
+            <li>Кропоткинская</li>
+            <li>Крылатское</li>
+            <li>Кузнецкий мост</li>
+            <li>Кузьминки</li>
+            <li>Кунцевская</li>
+            <li>Кунцевская</li>
+            <li>Курская</li>
+            <li>Курская</li>
+            <li>Кутузовская</li>
+            <li>Ленинский проспект</li>
+            <li>Лубянка</li>
+            <li>Люблино</li>
+            <li>Марксистская</li>
+            <li>Марьина роща</li>
+            <li>Марьино</li>
+            <li>Маяковская</li>
+            <li>Медведково</li>
+            <li>Международная</li>
+            <li>Менделеевская</li>
+            <li>Митино</li>
+            <li>Молодежная</li>
+            <li>Мякинино</li>
+            <li>Нагатинская</li>
+            <li>Нагорная</li>
+            <li>Нахимовский проспект</li>
+            <li>Новогиреево</li>
+            <li>Новокосино</li>
+            <li>Новокузнецкая</li>
+            <li>Новослободская</li>
+            <li>Новоясеневская</li>
+            <li>Новые черемушки</li>
+            <li>Октябрьская</li>
+            <li>Октябрьская</li>
+            <li>Октябрьское поле</li>
+            <li>Орехово</li>
+            <li>Отрадное</li>
+            <li>Охотный ряд</li>
+            <li>Павелецкая</li>
+            <li>Павелецкая</li>
+            <li>Парк культуры</li>
+            <li>Парк культуры</li>
+            <li>Парк Победы</li>
+            <li>Партизанская</li>
+            <li>Первомайская</li>
+            <li>Перово</li>
+            <li>Петровско-Разумовская</li>
+            <li>Печатники</li>
+            <li>Пионерская</li>
+            <li>Планерная</li>
+            <li>Площадь Ильича</li>
+            <li>Площадь революции</li>
+            <li>Полежаевская</li>
+            <li>Полянка</li>
+            <li>Пражская</li>
+            <li>Преображенская площадь</li>
+            <li>Пролетарская</li>
+            <li>Проспект Вернадского</li>
+            <li>Проспект мира</li>
+            <li>Проспект мира</li>
+            <li>Профсоюзная</li>
+            <li>Пушкинская</li>
+            <li>Пятницкое шоссе</li>
+            <li>Речной вокзал</li>
+            <li>Рижская</li>
+            <li>Римская</li>
+            <li>Рязанский проспект</li>
+            <li>Савёловская</li>
+            <li>Свиблово</li>
+            <li>Севастопольская</li>
+            <li>Семеновская</li>
+            <li>Серпуховская</li>
+            <li>Славянский бульвар</li>
+            <li>Смоленская</li>
+            <li>Смоленская</li>
+            <li>Сокол</li>
+            <li>Сокольники</li>
+            <li>Спортивная</li>
+            <li>Сретенский бульвар</li>
+            <li>Строгино</li>
+            <li>Студенческая</li>
+            <li>Сухаревская</li>
+            <li>Сходненская</li>
+            <li>Таганская</li>
+            <li>Таганская</li>
+            <li>Тверская</li>
+            <li>Театральная</li>
+            <li>Текстильщики</li>
+            <li>Теплый стан</li>
+            <li>Тимирязевская</li>
+            <li>Третьяковская</li>
+            <li>Третьяковская</li>
+            <li>Трубная</li>
+            <li>Тульская</li>
+            <li>Тургеневская</li>
+            <li>Тушинская</li>
+            <li>Улица 1905 года</li>
+            <li>Улица академика Янгеля</li>
+            <li>Улица Горчакова</li>
+            <li>Улица Подбельского</li>
+            <li>Улица Скобелевская</li>
+            <li>Улица Старокачаловская</li>
+            <li>Университет</li>
+            <li>Филевский парк</li>
+            <li>Фили</li>
+            <li>Фрунзенская</li>
+            <li>Царицыно</li>
+            <li>Цветной бульвар</li>
+            <li>Черкизовская</li>
+            <li>Чертановская</li>
+            <li>Чеховская</li>
+            <li>Чистые пруды</li>
+            <li>Чкаловская</li>
+            <li>Шаболовская</li>
+            <li>Шипиловская</li>
+            <li>Шоссе энтузиастов</li>
+            <li>Щелковская</li>
+            <li>Щукинская</li>
+            <li>Электрозаводская</li>
+            <li>Юго-Западная</li>
+            <li>Южная</li>
+            <li>Ясенево</li>
+        </ul>
+        <ul class="reset">
+            <li>Отменить выбор</li>
+        </ul>
+    </div>
+    <div class="down"><br></div>
+</div>
+</div>
+<script type="text/javascript">
+    stationsList.init(["kal-avi", "zam-avt", "kar-aka", "fil-als", "kar-ale", "zam-alm", "set-alt", "set-ann", "arp-arb", "fil-arb", "zam-aer", "kar-bab", "fil-bag", "tkr-bar", "arp-bau", "tkr-beg", "zam-bel", "kol-bel", "kar-bel", "set-bib", "sok-bil", "lub-bor", "set-bor", "kar-bos", "lub-bra", "but-ush", "set-bdd", "but-bal", "kah-var", "kar-vdn", "set-vla", "zam-vst", "zam-voi", "tkr-vop", "lub-vol", "arp-vol", "sok-vog", "fil-vys", "tkr-vyh", "zam-din", "set-dmi", "kol-dob", "zam-dom", "lub-dos", "lub-dub", "lub-zya", "arp-izm", "kar-kal", "zam-kan", "kah-kah", "zam-ksh", "kah-ksh", "arp-kie", "fil-kie", "kol-kie", "kar-kig", "tkr-kig", "lub-koj", "zam-kol", "sok-kom", "kol-kom", "kar-kon", "zam-kra", "kol-kra", "sok-kra", "sok-krv", "lub-krz", "sok-kro", "arp-kry", "tkr-kum", "tkr-kuz", "arp-kun", "fil-kun", "arp-kur", "kol-kur", "fil-kut", "kar-lpr", "sok-lub", "lub-lub", "kal-mar", "lub-mro", "lub-mar", "zam-mai", "kar-med", "fil-mej", "set-men", "arp-mit", "arp-mol", "arp-mkn", "set-ngt", "set-ngr", "set-nap", "kal-ngr", "kal-nks", "zam-nov", "kol-nov", "kar-nya", "kar-nch", "kol-okt", "kar-okt", "tkr-okp", "zam-ore", "set-otr", "sok-ohr", "zam-pav", "kol-pav", "sok-pak", "kol-pak", "arp-pap", "arp-par", "arp-per", "kal-per", "set-per", "lub-pch", "fil-pio", "tkr-pla", "kal-pil", "arp-plr", "tkr-pol", "set-pol", "set-pra", "sok-prp", "tkr-pro", "sok-prv", "kol-prm", "kar-prm", "kar-pro", "tkr-psh", "arp-psh", "zam-rev", "kar-rij", "lub-rim", "tkr-rpr", "set-sav", "kar-svi", "set-sev", "arp-sem", "set-ser", "arp-slb", "arp-smo", "fil-smo", "zam-sok", "sok-sok", "sok-spo", "lub-srb", "arp-str", "fil-stu", "kar-suh", "tkr-sho", "kol-tag", "tkr-tag", "zam-tve", "zam-tea", "tkr-tek", "kar-tes", "set-tim", "kar-tre", "kal-tre", "lub-tru", "set-tul", "kar-tur", "tkr-tsh", "tkr-ulg", "set-uya", "but-ugo", "sok-ulp", "but-usk", "but-ust", "sok-uni", "fil-fip", "fil-fil", "sok-fru", "zam-tsa", "set-cvb", "sok-che", "set-chr", "set-che", "sok-chp", "lub-chk", "kar-sha", "lub-shi", "kal-ent", "arp-she", "tkr-shu", "arp-ele", "sok-ugz", "set-uzh", "kar-yas"]);
+</script>
+
+<div id="duration">
+    <div><br></div>
+</div>
+</div>
+</div>
+<!-- panel canvas end -->
+</div>
+</div>
+
+<div id="canvas">
+<!-- canvas begin -->
+<div id="map">
+    <img id="mimage" src="app/maps/moscow/map.png"
+         width="1040" height="1270"
+         alt="Карта метро Москвы — схема московского метро, на которой линии и станции расположены в соответствии с картой Москвы">
+    <!--[if lte IE 7]>
+    <script type="text/javascript">$("#mimage").attr("src", "app/maps/moscow/map8.png"/*tpa=http://www.metromap.ru/app/maps/moscow/map8.png*/).show();</script>
+    <![endif]-->
+    <div id="route">
+        <div class="marker" style="visibility: hidden;"><br></div>
+    </div>
+    <img id="overlay" src="app/maps/moscow/overlay.png"
+         width="1020" height="1270" alt="" usemap="#stations">
+</div>
+<map name="stations">
+    <area href="#sok-ugz" shape="circle" coords="273,821,9">
+    <area href="#sok-prv" shape="circle" coords="317,776,9">
+    <area href="#sok-uni" shape="circle" coords="373,721,9">
+    <area href="#sok-vog" shape="circle" coords="420,660,9">
+    <area href="#sok-spo" shape="circle" coords="430,615,9">
+    <area href="#sok-fru" shape="circle" coords="463,600,9">
+    <area href="#sok-pak" shape="poly" coords="489,561,481,564,478,572,481,580,489,583">
+    <area href="#sok-kro" shape="circle" coords="506,540,9">
+    <area href="#sok-bil" shape="poly" coords="520,518,533,518,532,513,529,509,525,506,520,505">
+    <area href="#sok-ohr" shape="poly" coords="538,498,544,508,538,510,532,508,528,504,526,498">
+    <area href="#sok-lub" shape="poly" coords="554,474,562,477,565,485,562,493,554,496">
+    <area href="#sok-chp" shape="poly" coords="564,468,563,474,564,479,569,485,575,486,575,474">
+    <area href="#sok-krv" shape="circle" coords="598,457,9">
+    <area href="#sok-kom" shape="poly" coords="609,426,601,429,598,437,601,445,609,448">
+    <area href="#sok-kra" shape="circle" coords="631,417,9">
+    <area href="#sok-sok" shape="circle" coords="658,385,9">
+    <area href="#sok-prp" shape="circle" coords="726,361,9">
+    <area href="#sok-che" shape="circle" coords="788,336,9">
+    <area href="#sok-ulp" shape="circle" coords="763,297,9">
+    <area href="#zam-rev" shape="circle" coords="259,155,9">
+    <area href="#zam-vst" shape="circle" coords="281,210,9">
+    <area href="#zam-voi" shape="circle" coords="301,282,9">
+    <area href="#zam-sok" shape="circle" coords="334,331,9">
+    <area href="#zam-aer" shape="circle" coords="371,346,9">
+    <area href="#zam-din" shape="circle" coords="419,384,9">
+    <area href="#zam-bel" shape="poly" coords="468,421,460,424,457,432,460,440,468,443">
+    <area href="#zam-mai" shape="circle" coords="494,454,9">
+    <area href="#zam-tve" shape="poly" coords="515,469,527,469,526,475,521,480,515,481,509,480">
+    <area href="#zam-tea" shape="poly" coords="538,498,526,498,528,492,532,488,538,486,544,488">
+    <area href="#zam-nov" shape="poly" coords="559,552,547,552,548,546,553,541,559,540,565,541">
+    <area href="#zam-pav" shape="poly" coords="575,574,567,577,564,585,567,593,575,596">
+    <area href="#zam-avt" shape="circle" coords="614,670,9">
+    <area href="#zam-kol" shape="circle" coords="627,771,9">
+    <area href="#zam-ksh" shape="poly" coords="590,842,598,839,606,842,609,850,606,858">
+    <area href="#zam-kan" shape="circle" coords="613,918,9">
+    <area href="#zam-tsa" shape="circle" coords="640,968,9">
+    <area href="#zam-ore" shape="circle" coords="690,996,9">
+    <area href="#zam-dom" shape="circle" coords="737,1005,9">
+    <area href="#zam-kra" shape="poly" coords="778,986,775,994,778,1002,786,1005,794,1002">
+    <area href="#zam-alm" shape="circle" coords="830,927,9">
+    <area href="#arp-psh" shape="circle" coords="15,150,9">
+    <area href="#arp-mit" shape="circle" coords="28,189,9">
+    <area href="#arp-vol" shape="circle" coords="75,226,9">
+    <area href="#arp-mkn" shape="circle" coords="84,272,9">
+    <area href="#arp-str" shape="circle" coords="116,335,9">
+    <area href="#arp-kry" shape="circle" coords="124,501,9">
+    <area href="#arp-mol" shape="circle" coords="144,554,9">
+    <area href="#arp-kun" shape="poly" coords="201,577,193,580,190,588,193,596,201,599">
+    <area href="#arp-slb" shape="circle" coords="252,589,9">
+    <area href="#arp-pap" shape="circle" coords="333,575,9">
+    <area href="#arp-kie" shape="poly" coords="428,536,427,542,428,547,433,553,439,554,439,542">
+    <area href="#arp-smo" shape="circle" coords="471,531,9">
+    <area href="#arp-arb" shape="poly" coords="520,518,507,518,508,523,511,527,515,530,520,531">
+    <area href="#arp-plr" shape="poly" coords="538,498,544,488,548,492,550,498,548,504,544,508">
+    <area href="#arp-kur" shape="poly" coords="618,494,612,505,607,500,606,494,607,488,612,483">
+    <area href="#arp-bau" shape="circle" coords="658,443,9">
+    <area href="#arp-ele" shape="circle" coords="706,411,9">
+    <area href="#arp-sem" shape="circle" coords="733,407,9">
+    <area href="#arp-par" shape="circle" coords="792,391,9">
+    <area href="#arp-izm" shape="circle" coords="857,391,9">
+    <area href="#arp-per" shape="circle" coords="892,367,9">
+    <area href="#arp-she" shape="circle" coords="890,310,9">
+    <area href="#fil-kun" shape="poly" coords="201,577,209,580,212,588,209,596,201,599">
+    <area href="#fil-pio" shape="circle" coords="240,571,9">
+    <area href="#fil-fip" shape="circle" coords="273,557,9">
+    <area href="#fil-bag" shape="circle" coords="300,545,9">
+    <area href="#fil-fil" shape="circle" coords="335,536,9">
+    <area href="#fil-kut" shape="circle" coords="371,556,9">
+    <area href="#fil-stu" shape="circle" coords="402,564,9">
+    <area href="#fil-kie" shape="poly" coords="439,542,428,536,433,531,439,530,445,531,450,536">
+    <area href="#fil-smo" shape="circle" coords="463,524,9">
+    <area href="#fil-arb" shape="circle" coords="497,516,9">
+    <area href="#fil-als" shape="poly" coords="520,518,520,505,515,506,511,509,508,513,507,518">
+    <area href="#fil-mej" shape="circle" coords="368,525,9">
+    <area href="#fil-vys" shape="circle" coords="390,520,9">
+    <area href="#kol-kra" shape="poly" coords="450,475,458,472,466,475,469,483,466,491">
+    <area href="#kol-bel" shape="poly" coords="468,421,476,424,479,432,476,440,468,443">
+    <area href="#kol-nov" shape="poly" coords="512,411,515,419,512,427,504,430,496,427">
+    <area href="#kol-prm" shape="poly" coords="559,410,567,407,575,410,578,418,575,426">
+    <area href="#kol-kom" shape="poly" coords="609,426,617,429,620,437,617,445,609,448">
+    <area href="#kol-kur" shape="poly" coords="618,494,612,483,618,482,624,483,629,488,630,494">
+    <area href="#kol-tag" shape="poly" coords="603,553,597,543,603,541,609,543,613,547,615,553">
+    <area href="#kol-pav" shape="poly" coords="575,574,583,577,586,585,583,593,575,596">
+    <area href="#kol-dob" shape="poly" coords="555,585,558,593,555,601,547,604,539,601">
+    <area href="#kol-okt" shape="poly" coords="531,584,534,592,531,600,523,603,515,600">
+    <area href="#kol-pak" shape="poly" coords="489,561,497,564,500,572,497,580,489,583">
+    <area href="#kol-kie" shape="poly" coords="439,542,450,536,451,542,450,548,445,553,439,554">
+    <area href="#kar-med" shape="circle" coords="621,45,9">
+    <area href="#kar-bab" shape="circle" coords="626,107,9">
+    <area href="#kar-svi" shape="circle" coords="604,156,9">
+    <area href="#kar-bos" shape="circle" coords="576,189,9">
+    <area href="#kar-vdn" shape="circle" coords="582,275,9">
+    <area href="#kar-ale" shape="circle" coords="577,324,9">
+    <area href="#kar-rij" shape="circle" coords="573,376,9">
+    <area href="#kar-prm" shape="poly" coords="559,410,556,418,559,426,567,429,575,426">
+    <area href="#kar-suh" shape="circle" coords="565,442,9">
+    <area href="#kar-tur" shape="poly" coords="575,474,564,468,569,463,575,462,581,463,586,468">
+    <area href="#kar-kig" shape="poly" coords="556,504,559,512,567,515,575,512,578,504">
+    <area href="#kar-tre" shape="poly" coords="559,552,565,563,559,564,553,563,548,558,547,552">
+    <area href="#kar-okt" shape="poly" coords="515,600,512,592,515,584,523,581,531,584">
+    <area href="#kar-sha" shape="circle" coords="517,629,9">
+    <area href="#kar-lpr" shape="circle" coords="474,671,9">
+    <area href="#kar-aka" shape="circle" coords="450,737,9">
+    <area href="#kar-pro" shape="circle" coords="428,773,9">
+    <area href="#kar-nch" shape="circle" coords="401,818,9">
+    <area href="#kar-kal" shape="circle" coords="384,846,9">
+    <area href="#kar-bel" shape="circle" coords="357,895,9">
+    <area href="#kar-kon" shape="circle" coords="343,928,9">
+    <area href="#kar-tes" shape="circle" coords="320,980,9">
+    <area href="#kar-yas" shape="circle" coords="370,1022,9">
+    <area href="#kar-nya" shape="circle" coords="410,1038,9">
+    <area href="#tkr-pla" shape="circle" coords="181,137,9">
+    <area href="#tkr-sho" shape="circle" coords="188,173,9">
+    <area href="#tkr-tsh" shape="circle" coords="182,256,9">
+    <area href="#tkr-shu" shape="circle" coords="236,319,9">
+    <area href="#tkr-okp" shape="circle" coords="293,371,9">
+    <area href="#tkr-pol" shape="circle" coords="342,426,9">
+    <area href="#tkr-beg" shape="circle" coords="396,440,9">
+    <area href="#tkr-ulg" shape="circle" coords="425,470,9">
+    <area href="#tkr-bar" shape="poly" coords="450,475,447,483,450,491,458,494,466,491">
+    <area href="#tkr-psh" shape="poly" coords="515,469,509,480,504,475,503,469,504,463,509,458">
+    <area href="#tkr-kum" shape="poly" coords="554,474,546,477,543,485,548,493,554,496">
+    <area href="#tkr-kig" shape="poly" coords="556,504,559,496,567,493,575,496,578,504">
+    <area href="#tkr-tag" shape="poly" coords="603,553,615,553,613,559,609,563,603,565,597,563">
+    <area href="#tkr-pro" shape="poly" coords="622,582,625,590,633,593,641,590,644,582">
+    <area href="#tkr-vop" shape="circle" coords="671,607,9">
+    <area href="#tkr-tek" shape="circle" coords="758,662,9">
+    <area href="#tkr-kuz" shape="circle" coords="828,675,9">
+    <area href="#tkr-rpr" shape="circle" coords="880,636,9">
+    <area href="#tkr-vyh" shape="circle" coords="928,639,9">
+    <area href="#kal-tre" shape="poly" coords="559,552,565,541,570,546,571,552,570,558,565,563">
+    <area href="#kal-mar" shape="poly" coords="603,553,597,563,593,559,591,553,593,547,597,543">
+    <area href="#kal-pil" shape="poly" coords="648,527,645,535,648,543,656,546,664,543">
+    <area href="#kal-avi" shape="circle" coords="731,516,9">
+    <area href="#kal-ent" shape="circle" coords="795,491,9">
+    <area href="#kal-per" shape="circle" coords="866,517,9">
+    <area href="#kal-ngr" shape="circle" coords="926,515,9">
+    <area href="#kal-nks" shape="circle" coords="1021,540,9">
+    <area href="#set-alt" shape="circle" coords="475,8,9">
+    <area href="#set-bib" shape="circle" coords="506,55,9">
+    <area href="#set-otr" shape="circle" coords="510,128,9">
+    <area href="#set-vla" shape="circle" coords="481,184,9">
+    <area href="#set-per" shape="circle" coords="452,222,9">
+    <area href="#set-tim" shape="circle" coords="453,284,9">
+    <area href="#set-dmi" shape="circle" coords="464,321,9">
+    <area href="#set-sav" shape="circle" coords="478,371,9">
+    <area href="#set-men" shape="poly" coords="496,427,493,419,496,411,504,408,512,411">
+    <area href="#set-cvb" shape="poly" coords="532,448,535,440,543,437,551,440,554,448">
+    <area href="#set-che" shape="poly" coords="515,469,509,458,515,457,521,458,526,463,527,469">
+    <area href="#set-bor" shape="poly" coords="520,518,520,531,525,530,529,527,532,523,533,518">
+    <area href="#set-pol" shape="circle" coords="538,565,9">
+    <area href="#set-ser" shape="poly" coords="539,601,536,593,539,585,547,582,555,585">
+    <area href="#set-tul" shape="circle" coords="546,665,9">
+    <area href="#set-ngt" shape="circle" coords="545,754,9">
+    <area href="#set-ngr" shape="circle" coords="524,787,9">
+    <area href="#set-nap" shape="circle" coords="512,824,9">
+    <area href="#set-sev" shape="poly" coords="490,851,487,859,490,867,498,870,506,867">
+    <area href="#set-chr" shape="circle" coords="513,898,9">
+    <area href="#set-uzh" shape="circle" coords="519,966,9">
+    <area href="#set-pra" shape="circle" coords="510,999,9">
+    <area href="#set-uya" shape="circle" coords="504,1060,9">
+    <area href="#set-ann" shape="circle" coords="496,1101,9">
+    <area href="#set-bdd" shape="poly" coords="448,1143,456,1140,464,1143,467,1151,464,1159">
+    <area href="#lub-mro" shape="circle" coords="536,365,9">
+    <area href="#lub-dos" shape="circle" coords="534,409,9">
+    <area href="#lub-tru" shape="poly" coords="532,448,535,456,543,459,551,456,554,448">
+    <area href="#lub-srb" shape="poly" coords="575,474,586,468,587,474,586,480,581,485,575,486">
+    <area href="#lub-chk" shape="poly" coords="618,494,630,494,629,500,624,505,618,506,612,505">
+    <area href="#lub-rim" shape="poly" coords="648,527,656,524,664,527,667,535,664,543">
+    <area href="#lub-krz" shape="poly" coords="622,582,625,574,633,571,641,574,644,582">
+    <area href="#lub-dub" shape="circle" coords="653,635,9">
+    <area href="#lub-koj" shape="circle" coords="671,676,9">
+    <area href="#lub-pch" shape="circle" coords="753,720,9">
+    <area href="#lub-vol" shape="circle" coords="801,726,9">
+    <area href="#lub-lub" shape="circle" coords="819,779,9">
+    <area href="#lub-bra" shape="circle" coords="798,836,9">
+    <area href="#lub-mar" shape="circle" coords="785,868,9">
+    <area href="#lub-bor" shape="circle" coords="788,923,9">
+    <area href="#lub-shi" shape="circle" coords="782,964,9">
+    <area href="#lub-zya" shape="poly" coords="794,1002,797,994,794,986,786,983,778,986">
+    <area href="#kah-kah" shape="poly" coords="490,851,498,848,506,851,509,859,506,867">
+    <area href="#kah-var" shape="circle" coords="541,857,9">
+    <area href="#kah-ksh" shape="poly" coords="590,842,587,850,590,858,598,861,606,858">
+    <area href="#but-ust" shape="poly" coords="448,1143,445,1151,448,1159,456,1162,464,1159">
+    <area href="#but-usk" shape="circle" coords="412,1224,9">
+    <area href="#but-ush" shape="circle" coords="390,1235,9">
+    <area href="#but-ugo" shape="circle" coords="367,1246,9">
+    <area href="#but-bal" shape="circle" coords="339,1259,9">
+</map>
+<dl id="tooltip">
+    <dt><br></dt>
+    <dd><br></dd>
+</dl>
+</div>
+</div>
+
+<script type="text/javascript" src="scripts/panel.js"></script>
+<script type="text/javascript" src="scripts/route.js"></script>
+<script type="text/javascript" src="scripts/maps/moscow.js"></script>
+<script type="text/javascript">
+    $(function () {
+        fixedHeader.init();
+        subway.init();
+        panel.init();
+    });
+    $('#stations-amount').html(stationsList.stations.length.inflect('станция', 'станции', 'станций'));
+</script>
+</body>
+</html>
