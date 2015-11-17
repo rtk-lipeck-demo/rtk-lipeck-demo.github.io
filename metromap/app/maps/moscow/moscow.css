@@ -1,0 +1,55 @@
+#map {
+	position: relative;
+	width: 1040px; height: 1270px;
+	margin: 5px -40px 30px -30px;
+}
+
+#stations li {
+	background: url(lines.png)/*tpa=http://www.metromap.ru/app/maps/moscow/lines.png*/ no-repeat;
+}
+#stations .reset li {
+	background-position: 9px -390px;
+}
+#stations .sok {background-position: 9px -30px;}
+#stations .zam {background-position: 9px -60px;}
+#stations .arp {background-position: 9px -90px;}
+#stations .fil {background-position: 9px -120px;}
+#stations .kol {background-position: 9px -150px;}
+#stations .kar {background-position: 9px -180px;}
+#stations .tkr {background-position: 9px -210px;}
+#stations .kal {background-position: 9px -240px;}
+#stations .set {background-position: 9px -270px;}
+#stations .lub {background-position: 9px -300px;}
+#stations .kah {background-position: 9px -330px;}
+#stations .but {background-position: 9px -360px;}
+
+.stations-button em.sok {background-color: #ff0000;}
+.stations-button em.zam {background-color: #017a38;}
+.stations-button em.arp {background-color: #082c99;}
+.stations-button em.fil {background-color: #3399cc;}
+.stations-button em.kol {background-color: #653300;}
+.stations-button em.kar {background-color: #ff9c0c;}
+.stations-button em.tkr {background-color: #ac0279;}
+.stations-button em.kal {background-color: #f0cb01;}
+.stations-button em.set {background-color: #808080;}
+.stations-button em.lub {background-color: #95d045;}
+.stations-button em.kah {background-color: #339999;}
+.stations-button em.but {background-color: #00afbf;}
+
+dt.sok, a.sok, span.sok {color: #ff0000;}
+dt.zam, a.zam, span.zam {color: #017a38;}
+dt.arp, a.arp, span.arp {color: #082c99;}
+dt.fil, a.fil, span.fil {color: #3399cc;}
+dt.kol, a.kol, span.kol {color: #653300;}
+dt.kar, a.kar, span.kar {color: #ff9c0c;}
+dt.tkr, a.tkr, span.tkr {color: #ac0279;}
+dt.kal, a.kal, span.kal {color: #f0cb01;}
+dt.set, a.set, span.set {color: #808080;}
+dt.lub, a.lub, span.lub {color: #95d045;}
+dt.kah, a.kah, span.kah {color: #339999;}
+dt.but, a.but, span.but {color: #00afbf;}
+
+* html #stations li {
+	background: url(lines-ie.png) no-repeat;
+}
+

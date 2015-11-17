@@ -1,0 +1,636 @@
+html, body {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+img, a {
+    -webkit-user-drag: none
+}
+
+/* Default styles */
+html, body, td, th, form, ul, ol, dl, dt, dd {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border: none;
+    border-collapse: collapse;
+}
+
+html, body {
+    height: 100%;
+}
+
+img {
+    border: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.wide {
+    width: 100%;
+}
+
+.wrap {
+    overflow: hidden;
+}
+
+.clearfix:after {
+    content: ' ';
+    clear: both;
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    font-size: 0;
+}
+
+/* Page layout */
+body {
+    min-width: 980px;
+    background: url(paper.jpg) /*tpa=http://www.metromap.ru/app/paper.jpg*/ #faf8ee;
+    font: 87.5%/1.5 Georgia, serif;
+    color: #333;
+}
+
+#page {
+    min-height: 100%;
+    margin-bottom: -50px;
+}
+
+#canvas {
+    width: 970px;
+    margin: 0 auto;
+    padding: 5px 0 80px;
+}
+
+#footer {
+    width: 970px;
+    margin: 0 auto;
+    padding-top: 15px;
+    background: url(footer.png) /*tpa=http://www.metromap.ru/app/footer.png*/ no-repeat;
+    color: #666;
+}
+
+/* Links */
+a {
+    color: #06C;
+}
+
+.link {
+    color: #06C;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.action {
+    color: #06C;
+    border-bottom: 1px dotted #06C;
+    cursor: pointer;
+}
+
+a.quoted {
+    text-decoration: none;
+}
+
+a.quoted span {
+    text-decoration: underline;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5 {
+    font-weight: normal;
+}
+
+h1 {
+    margin: 0 5px 22px;
+    font-size: 32px;
+    line-height: 36px;
+}
+
+h2 {
+    margin: 0 5px 18px;
+    font-size: 26px;
+    line-height: 30px;
+}
+
+h3 {
+    margin: 0 5px 14px;
+    font-size: 22px;
+    line-height: 26px;
+}
+
+h4 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    line-height: 22px;
+}
+
+h5 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+h6 {
+    margin: 0 0 8px;
+    font-size: 100%;
+}
+
+.section h1,
+.section h2,
+.section h3 {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Sections */
+.frame {
+    margin: 0 0 10px;
+    border: 1px solid #e0daca;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    background: #FFF;
+}
+
+.frame.utility {
+    background: #fdfcf8;
+    border-color: #ebe6d8;
+}
+
+.delimit-top {
+    border-top: 1px dotted #CCCCCC;
+}
+
+.delimit-bottom {
+    border-bottom: 1px dotted #CCCCCC;
+}
+
+.section {
+    margin: 0 5px;
+}
+
+.frame .section {
+    margin: 13px 19px 14px;
+}
+
+.section p {
+    margin: 0 0 10px;
+}
+
+/* Popup */
+.popup {
+    position: relative;
+}
+
+.popup .shadow div {
+    position: absolute;
+    background: url(popup.png) /*tpa=http://www.metromap.ru/app/popup.png*/ no-repeat;
+    z-index: -1;
+}
+
+.popup .shadow .left,
+.popup .shadow .right {
+    top: 18px;
+    bottom: 18px;
+    width: 17px;
+    background-repeat: repeat-y;
+}
+
+.popup .shadow .left {
+    left: -17px;
+}
+
+.popup .shadow .right {
+    right: -17px;
+    background-position: 100% 0;
+}
+
+.popup .shadow .tl,
+.popup .shadow .tr {
+    top: -14px;
+    height: 32px;
+}
+
+.popup .shadow .bl,
+.popup .shadow .br {
+    bottom: -20px;
+    height: 38px;
+}
+
+.popup .shadow .tl,
+.popup .shadow .bl {
+    left: -17px;
+    right: 18px;
+}
+
+.popup .shadow .tr,
+.popup .shadow .br {
+    right: -17px;
+    width: 35px;
+}
+
+.popup .shadow .tl {
+    background-position: -18px 0;
+}
+
+.popup .shadow .tr {
+    background-position: -767px 0;
+}
+
+.popup .shadow .bl {
+    background-position: -18px 100%;
+}
+
+.popup .shadow .br {
+    background-position: -767px 100%;
+}
+
+.popup .close {
+    position: absolute;
+    left: -23px;
+    top: 9px;
+    width: 16px;
+    height: 16px;
+    margin-left: 100%;
+    background: url(close.png) /*tpa=http://www.metromap.ru/app/close.png*/ no-repeat;
+    cursor: pointer;
+}
+
+.popup .frame {
+    border-color: #d9d9d9;
+    margin-bottom: 0;
+}
+
+/* Forms */
+.section p.checkbox {
+    margin: 0 0 6px;
+}
+
+.checkbox input {
+    position: relative;
+    top: -1px;
+    margin-left: 0;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+input.field,
+textarea.field {
+    margin: 0;
+    border: 1px solid #a6a6a6;
+    border-top-color: #808080;
+    border-bottom-color: #cccccc;
+    padding: 2px;
+    font-size: 13px;
+}
+
+/* Smart button */
+.smart-button {
+    display: table;
+}
+
+.sb-button {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.sb-state {
+    display: table-cell;
+    padding: 0 0 0 10px;
+    vertical-align: middle;
+    font-size: 12px;
+    color: #A0A0A0;
+}
+
+.sb-state .success {
+    color: #137300;
+}
+
+.sb-state .error {
+    color: #CC361F;
+}
+
+/* Header */
+#header-canvas {
+    background: url(panel/header.png) /*tpa=http://www.metromap.ru/app/panel/header.png*/;
+}
+
+#header-content {
+    width: 970px;
+    margin: 0 auto;
+}
+
+.fixed #header-canvas {
+    visibility: hidden;
+}
+
+/* Advertisements */
+#ad-canvas {
+    background: url(ads.png) /*tpa=http://www.metromap.ru/app/ads.png*/ repeat-x 0 100% #dad7ce;
+}
+
+.ad-content {
+    display: block;
+    height: 60px;
+    font: 24px/59px Arial, sans-serif;
+    color: #333;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Panel */
+#panel-canvas {
+    height: 90px;
+}
+
+#panel,
+#panel-content {
+    background: url(panel/panel.png) /*tpa=http://www.metromap.ru/app/panel/panel.png*/ no-repeat;
+}
+
+#panel {
+    position: relative;
+    z-index: 10;
+    min-width: 990px;
+    width: 100%;
+    height: 90px;
+    background-repeat: repeat-x;
+    background-position: 50% 0;
+}
+
+#panel-content {
+    position: relative;
+    top: 20px;
+    width: 950px;
+    height: 40px;
+    margin: 0 auto;
+    background-position: 50% -20px;
+    background-color: #545454;
+}
+
+.fixed #panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* Path */
+.path {
+    margin: 0 10px;
+    color: #FFF;
+    font: 13px/40px Arial, sans-serif;
+    cursor: default;
+}
+
+.path li {
+    float: left;
+    height: 40px;
+    padding: 0 10px 0 26px;
+    background: url(panel/separator.png) /*tpa=http://www.metromap.ru/app/panel/separator.png*/ no-repeat 0 -50px;
+}
+
+.path li.main {
+    padding-left: 0;
+    background: none;
+}
+
+.path a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+.path a:hover {
+    text-decoration: underline;
+}
+
+/* Stations button */
+.stations-button {
+    position: relative;
+    width: 248px;
+    height: 22px;
+    font: 13px Arial, sans-serif;
+}
+
+.stations-button em,
+.stations-button .bgr {
+    position: absolute;
+    background: url(stations/button.png) /*tpa=http://www.metromap.ru/app/stations/button.png*/ no-repeat;
+}
+
+.stations-button .bgr {
+    left: -3px;
+    top: -2px;
+    width: 254px;
+    height: 28px;
+}
+
+.stations-button em {
+    left: 7px;
+    top: 4px;
+    width: 14px;
+    height: 15px;
+    overflow: hidden;
+    background-position: -260px -36px;
+}
+
+.stations-button em.empty {
+    visibility: hidden;
+}
+
+.stations-button dl {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 248px;
+    height: 22px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.macos-safari .stations-button dl {
+    line-height: 21px;
+}
+
+.stations-button dt,
+.stations-button dd {
+    position: absolute;
+    left: 10px;
+}
+
+.stations-button dt {
+    top: 2px;
+    color: #EEE;
+}
+
+.stations-button dd {
+    top: 1px;
+    color: #666;
+}
+
+.stations-button .selected dt {
+    left: 24px;
+}
+
+.stations-button .selected dd {
+    left: 24px;
+    color: #333;
+}
+
+/* Stations dropdown */
+#stations {
+    position: absolute;
+    top: 0;
+    font: 13px/20px Arial, sans-serif;
+    visibility: hidden;
+    z-index: 5;
+}
+
+#stations .search,
+#stations .clear,
+#stations .list,
+#stations .up,
+#stations .down {
+    background: url(stations/dropdown.png) /*tpa=http://www.metromap.ru/app/stations/dropdown.png*/ no-repeat;
+}
+
+#stations .search,
+#stations .list {
+    position: absolute;
+    left: -13px;
+    width: 266px;
+}
+
+#stations .search {
+    top: -11px;
+    height: 52px;
+}
+
+#stations .search input {
+    position: absolute;
+    left: 21px;
+    top: 21px;
+    width: 182px;
+    height: 15px;
+    margin: 0;
+    border: none;
+    padding: 3px 21px;
+    background: transparent;
+    font: 13px/15px Arial, sans-serif;
+}
+
+#stations .clear {
+    display: none;
+    position: absolute;
+    left: 229px;
+    top: 26px;
+    width: 11px;
+    height: 11px;
+    background-position: -242px -60px;
+    cursor: pointer;
+}
+
+#stations .list {
+    top: 41px;
+    background-position: 0 100%;
+    padding-bottom: 16px;
+    overflow: hidden;
+}
+
+#stations .scroll {
+    width: 280px;
+    max-height: 300px;
+    margin-left: 13px;
+    overflow: auto;
+}
+
+#stations .up,
+#stations .down {
+    position: relative;
+    width: 238px;
+    height: 20px;
+    margin-left: 14px;
+}
+
+#stations .up {
+    margin-top: -1px;
+    margin-bottom: -19px;
+    background-position: 0 -60px;
+}
+
+#stations .down {
+    margin-top: -20px;
+    background-position: 0 -90px;
+}
+
+#stations ul {
+    width: 234px;
+    margin-left: 3px;
+}
+
+#stations ul.items {
+    padding-top: 6px;
+}
+
+#stations ul.reset {
+    margin-top: 6px;
+    border-top: 1px dotted #CCC;
+    padding: 6px 0;
+    color: #888;
+}
+
+#stations li {
+    height: 21px;
+    padding: 0 10px 0 26px;
+    cursor: default;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+.macos-safari #stations li {
+    line-height: 21px;
+}
+
+#stations li:hover {
+    background-color: #e5f1fc;
+}
+
+#stations li.preferred {
+    background-color: #d4e7fa;
+}
+
+#stations .empty {
+    margin: 0 14px;
+    padding: 6px 0 1px;
+    display: none;
+}
+
+/* Autocomplete */
+.ac_results {
+    border: 1px solid #999;
+    padding: 2px;
+    background: #FFF;
+}
+
+.ac_results ul {
+    font: 13px/16px Arial, sans-serif;
+}
+
+.ac_results li {
+    padding: 2px 7px;
+}
+
+.ac_over {
+    background-color: #D4E7FA;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+}

@@ -1,0 +1,58 @@
+* html body {
+	background-attachment: fixed;
+	font-size: 14px;
+}
+.wrap,
+.clearfix {
+	zoom: 1;
+}
+* html .fixed #panel {
+	position: absolute;
+	top: expression(eval(document.documentElement.scrollTop)+'px');
+}
+* html #stations .scroll {
+	height: 294px; 
+}
+* html .popup .shadow {
+	display: none;
+}
+
+* html .marker {
+	background-image: url(main/marker-ie.png)/*tpa=http://www.metromap.ru/app/main/marker-ie.png*/;
+	zoom: 1;
+}
+.facts dd {
+	display: inline;
+}
+
+#header {
+	zoom: 1;
+}
+* html #mimage {
+	display: none;
+}
+
+/* Comments */
+#comments,
+#comments .loader,
+#comments .group {
+	zoom: 1;
+}
+.comment {
+	position: relative;
+	zoom: 1;
+}
+.comment .author {
+	left: 0;
+}
+
+/* Tags */
+* html #tags-list dl {
+	zoom: 1;
+}
+* html #tags-list dd {
+	overflow: hidden;
+}
+#tags-list {
+	z-index: 1;
+}

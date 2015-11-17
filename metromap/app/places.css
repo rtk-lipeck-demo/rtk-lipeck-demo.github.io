@@ -1,0 +1,466 @@
+/* Places index */
+#places-intro {
+	font-size: 16px;
+	line-height: 20px;
+	margin-bottom: 20px;
+}
+#places-list h6 {
+	font-weight: normal;
+}
+
+/* Places list */
+.places-title td {
+	vertical-align: top;
+}
+.places-title .dropdown {
+	margin: 8px 0 0 15px;
+}
+
+#places-list {
+	margin: 0 210px 0 260px;
+}
+#places-list h5 a {
+	text-decoration: none;
+}
+#places-list li {
+	margin: 0 0 2px;
+}
+
+/* Stations button */
+#place-station {
+	margin: 18px 0 16px;
+	visibility: hidden;
+}
+#places-order {
+	margin: 9px 0 0 15px;
+	visibility: hidden;
+}
+#get-places-state {
+	position: relative;
+	left: 10px; top: 11px;
+	color: #bfb8a3;
+}
+
+/* Tags */
+#tags-list {
+	float: left;
+	position: relative;
+	width: 238px;
+}
+#tags-list .section {
+	margin-left: 4px;
+	margin-right: 4px;
+}
+#tags-list h5 {
+	margin: 0 15px 7px;
+}
+#tags-list dl {
+	position: relative;
+	margin: 0 0 1px;
+	font-size: 14px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+#tags-list dl.minor {
+	display: none;
+}
+#tags-list dt {
+	margin: 0 40px 0 15px;
+	padding: 4px 0;
+	line-height: 16px;
+}
+#tags-list dd {
+	position: absolute;
+	left: 202px; top: 5px;
+	width: 14px; height: 14px;
+	background: url(select-tag.png)/*tpa=http://www.metromap.ru/app/select-tag.png*/ no-repeat;
+	cursor: pointer;
+}
+#tags-list .selected {
+	background: #d3e4f5;
+}
+#tags-list .selected a {
+	text-decoration: none;
+	color: #3d5266;
+}
+#tags-list .selected dd {
+	background-position: 0 -40px;
+}
+#tags-list .more {
+	margin: 10px 40px 0 15px;
+	font: 11px/13px Arial, sans-serif;
+}
+#tags-list .with-minors .more {
+	display: none;
+}
+
+#nets-list {
+	position: absolute;
+	left: 7px; top: 7px;
+	z-index: 1;
+	width: 726px;
+	visibility: hidden;
+}
+#nets-list .section {
+	margin: 6px 4px 18px 12px;
+}
+#nets-list .column {
+	float: left;
+	width: 228px;
+	margin-right: 8px;
+}
+#nets-list h5 {
+	margin-top: 12px;
+}
+#nets-list dl.minor {
+	display: block;
+}
+#nets-list dl.relevant {
+	background: #e9f1fa;
+}
+#nets-list dl.relevant dd {
+	background-position: 0 -20px;
+	cursor: default;
+}
+
+/* Adsense */
+#ads-right {
+	float: right;
+	width: 188px;
+}
+#direct-right {
+	margin: 12px 15px;
+}
+
+/* Place view */
+.place-left {
+	float: left;
+	width: 580px;
+}
+.place-right {
+	float: right;
+	width: 370px;
+}
+#description {
+	font-size: 16px;
+	line-height: 20px;
+}
+#description .alert h4,
+#description .alert h5 {
+	margin: 0 0 5px;
+	color: #CC361F;
+}
+#description .alert .tip {
+	margin: 0;
+	color: #6D6D6F;
+	font: 11px Arial, sans-serif;
+}
+
+/* Facts */
+#pfacts {
+	float: left;
+	width: 283px;
+}
+#mfacts {
+	float: right;
+	width: 283px;
+}
+.facts .empty {
+	line-height: 16px;
+	color: #999;
+}
+.facts dl {
+	line-height: 16px;
+	margin: 0 0 8px;
+}
+.facts dt {
+	margin-right: 50px;
+	margin-left: 12px;
+}
+.facts dt em {
+	position: absolute;
+	margin-left: -11px;
+	font-style: normal;
+}
+.facts dd {
+	position: relative;
+	top: 3px;
+	float: right;
+	width: 26px;
+	margin-right: 21px;
+	text-align: right;
+	color: #a6a6a6;	
+	font: 11px Arial, sans-serif;
+}
+.facts .vote,
+.facts .voted {
+	position: absolute;
+	left: 30px; top: -1px;
+	width: 20px; height: 14px;
+	background: url(places/vote.png)/*tpa=http://www.metromap.ru/app/places/vote.png*/ no-repeat;
+}
+.macos .facts .vote,
+.macos .facts .voted {
+	top: -2px;
+}
+.facts .vote {
+	cursor: pointer;
+}
+.facts .voted {
+	background-position: 0 -20px;
+	cursor: default;
+}
+#mfacts h4 {
+	color: #cc361f;
+}
+#pfacts h4 {
+	color: #137300;
+}
+
+#new-fact {
+	display: none;
+}
+#new-fact .section {
+	margin-top: 10px;
+}
+#new-fact .smart-button {
+	margin-top: 2px;
+}
+#new-fact textarea {
+	width: 242px;
+	height: 40px;
+	margin-bottom: 5px;
+}
+
+
+/* Comments list */
+#comments {
+	margin: 0 0 18px;
+	padding-bottom: 12px;
+	background: url(places/comments.png)/*tpa=http://www.metromap.ru/app/places/comments.png*/ no-repeat 0 100%;
+}
+#comments .group {
+	position: relative;
+	overflow: hidden;
+}
+#comments .slider {
+	position: absolute;
+	bottom: 0;
+}
+#comments .frame {
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+/* Comments loader */
+#comments .loader {
+	font: 11px Arial, sans-serif;
+}
+#comments .loader .section {
+	margin: 14px 20px 14px;
+}
+#comments .amount {
+	float: left;
+	padding-right: 10px;
+	color: #666;
+}
+#comments .load-more {
+	float: left;
+	width: 150px;
+}
+#comments .load-all {
+	float: right;
+	width: 150px;
+	text-align: right;
+}
+#comments .loading .link {
+	display: none;
+}
+#comments .loader .state {
+	display: none;
+	color: #999;
+}
+#comments .loading .state {
+	display: inline;
+}
+
+/* Comment */
+.comment .author {
+	position: absolute;
+	width: 146px;
+	margin-left: 5px;
+	padding-top: 7px;
+	background: url(places/comment.png)/*tpa=http://www.metromap.ru/app/places/comment.png*/ no-repeat 100% 14px;
+	color: #bfb8a3;
+}
+.comment .author strong {
+	border-bottom: 1px dotted #333;
+	color: #333;
+	font-weight: normal;
+	cursor: pointer;
+}
+.comment .frame {
+	margin-left: 150px;
+}
+.comment .frame p {
+	margin: 7px 14px 8px;
+}
+.comment .frame p.answer {
+	border-top: 1px dotted #CCCCCC;
+	margin: 0 0 8px;
+	padding: 7px 14px 0;
+	font: 11px Arial, sans-serif;
+	color: #6D6D6F;
+}
+.comment p.answer strong {
+	font-weight: normal;
+	color: #333;
+}
+.comment .date {
+	margin-left: 3px;
+	color: #a6a6a6;
+	font: 11px Arial, sans-serif;
+	white-space: nowrap;
+}
+
+/* Comments form */
+#new-comment .section {
+	margin: 0 0 8px 150px;
+}
+#new-comment .submit {
+	margin: 10px 0 0 150px;
+}
+#new-comment .label {
+	position: absolute;
+	margin: 2px 0 0 -145px;
+	width: 130px;
+	line-height: 15px;
+}
+#new-comment dd {
+	margin-left: 145px;
+}
+#new-comment .field {
+	width: 420px;
+}
+#new-comment textarea.field {
+	height: 80px;
+}
+#new-comment .sb-state {
+	color: #bfb8a3;
+}
+#new-comment .rename {
+	display: none;
+	margin: 5px 0 0;
+	font: 11px Arial, sans-serif;
+}
+#new-comment div.hidden {
+	position: absolute;
+	visibility: hidden;
+}
+
+/* Map */
+#gmap {
+	position: relative;
+	height: 390px;
+	margin-bottom: 20px;
+}
+#gmap .top,
+#gmap .bottom,
+#gmap .shadow {
+	background: url(gmap/frame.png)/*tpa=http://www.metromap.ru/app/gmap/frame.png*/ no-repeat;
+}
+#gmap .shadow {
+	position: absolute;
+	left: -5px; top: -4px;
+	width: 380px;
+	background-position: 0 50%;
+}
+#gmap .top,
+#gmap .bottom {
+	height: 15px;
+	position: relative;
+	font-size: 1px;
+}
+#gmap .top {
+	margin-bottom: -11px;
+	z-index: 1;
+}
+#gmap .bottom {
+	background-position: 0 100%;
+}
+#gmap .box {
+	width: 368px; height: 390px;
+	overflow: hidden;
+	margin: 0 0 -9px 5px;
+	border: 1px solid #bfbfbf;
+	background: #eeebe4;
+}
+#logocontrol {
+	width: 363px;
+	margin: 0 0 -2px -2px;
+	background: url(gmap/copy.png)/*tpa=http://www.metromap.ru/app/gmap/copy.png*/ repeat-x;
+	padding: 0 0 19px 5px;
+	opacity: 0.9;
+}
+#logocontrol.satellite {
+	background-position: 0 -80px;
+}
+#zoom-in,
+#zoom-out,
+#map-type {
+	position: absolute;
+	left: 9px;
+	width: 18px; height: 19px;
+	background: url(gmap/controls.png)/*tpa=http://www.metromap.ru/app/gmap/controls.png*/ no-repeat;
+	cursor: pointer;
+	visibility: hidden;
+}
+.active #zoom-in,
+.active #zoom-out,
+.active #map-type {
+	visibility: visible;
+}
+#zoom-in {
+	top: 37px;
+	background-position: 0 -60px;
+}
+#zoom-out {
+	top: 60px;
+	background-position: 0 -90px;
+}
+#zoom-in.disabled {
+	background-position: 0 -120px;
+}
+#zoom-out.disabled {
+	background-position: 0 -150px;
+}
+#map-type {
+	top: 9px;
+}
+#map-type.satellite {
+	background-position: 0 -30px;
+}
+
+/* Children */
+#children .more p {
+	margin: 0;
+}
+#children .more,
+#children.majors li,
+#children.majors .more p.add {
+	display: none;
+}
+#children.majors li.major {
+	display: list-item;
+}
+#children.majors .more {
+	display: block;
+}
+
+/* Adsense */
+#adsense-place .section {
+	margin-left: 17px;
+	margin-bottom: 10px;
+}
